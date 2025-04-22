@@ -1,0 +1,804 @@
+:root{
+    --wit: #FAFAFA;
+    --black: #000000;
+    --roze: #F6EAFB;
+}
+
+@font-face {
+    font-family: 'NeueMontreal-regular';
+    src: url('../assets/fonts/NeueMontreal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeueMontreal-bold';
+    src: url('../assets/fonts/NeueMontreal-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'NeueMontreal-italic';
+    src: url('../assets/fonts/NeueMontreal-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2{
+    font-size: 1.875rem
+}
+
+html{
+    font-family: 'NeueMontreal-regular', sans-serif;
+
+    .container{
+        max-width: 1232px;
+        margin: 0 auto;
+    }
+    header{
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        height: 80px;
+        padding: 0 4rem;
+        background-color: var(--wit);
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.3));
+        nav{
+            width: 100%;
+            height: 100%;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+                text-decoration: none;
+                color: var(--black);
+            }
+        }
+    }
+
+    main{
+        .banner{
+            padding: calc(80px + 5.5rem) 2rem 5.5rem 2rem;
+            background-color: var(--roze);
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem;
+                .text-box{
+                    h2{
+                        font-size: 3.125rem; 
+
+                    }
+                    p{
+                        max-width: 560px;
+                        font-size: 1.25rem;
+                        margin-top: 1rem;
+                        line-height: 1.75rem;
+                    }
+                }
+                img{
+                    max-width: auto;
+                    max-height: 100%;
+                }
+            }
+        }
+
+        .over-mij{
+            .container{
+                padding: 5rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items:flex-start;
+                flex-wrap: wrap;
+                row-gap: 3.5rem;
+
+                .text-box{
+                    max-width: 520px;
+
+                    h2{
+                        font-family: 'NeueMontreal-bold', sans-serif;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    h3{
+                        font-family: 'NeueMontreal-italic', sans-serif;
+                        font-size: 1.2rem;
+                        margin-bottom: 0.7rem;
+                    }
+
+                    p{
+                        font-size: 1.125rem;
+                        line-height: 1.55rem;
+                       
+                    }
+
+                    .pre-alinea{
+                        margin-bottom: 1.125rem;
+                    }
+                }
+            }
+        }
+        .favoriete-programmas{
+            background-color: var(--roze);
+            h2{
+                font-family: 'NeueMontreal-bold', sans-serif;
+                margin-bottom: 2.5rem;
+                text-align: center;
+                padding-top: 3rem;
+
+            }
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem 3rem;
+            }
+        }
+        .mijn-werk{
+            padding: 3rem 2rem 5rem;
+            h2{
+                font-family: 'NeueMontreal-bold', sans-serif;
+                margin-bottom: 2.5rem;
+            }
+            .grid-werk {
+                display: grid;
+                grid-template-columns: repeat(9, 1fr); 
+                grid-template-rows: repeat(8, 1fr); 
+                grid-column-gap: 30px;
+                grid-row-gap: 30px;
+            }
+            
+            .nhm {
+                grid-area: 1 / 1 / 5 / 10; 
+            }
+            
+            .storymakers {
+                grid-area: 5 / 1 / 9 / 5; 
+            }
+            
+            .eureka {
+                grid-area: 5 / 5 / 7 / 10; 
+            }
+            
+            .tdp {
+                margin-top: 32px;
+                grid-area: 7 / 5 / 9 / 10; 
+            }
+            .nhm, .eureka, .storymakers, .tdp{
+                   
+                display: inline-block;
+                position: relative;
+                height:auto;
+                overflow: hidden;
+            
+                img{
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                        
+                }
+            
+                .shadow{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(0deg,rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 54%);
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        opacity: 1;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+
+                    h2{
+                        font-family: 'NeueMontreal-regular', sans-serif;
+                        position: absolute;
+                        bottom: 60px;
+                        left: 30px;
+                        color: var(--wit);
+                        font-size: 2rem;
+                        margin-bottom: 0;
+                    }
+
+                    .tags{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 1rem;
+                        position: absolute;
+                        bottom: 20px;
+                        left: 30px;
+                        h4{
+                            color: var(--black);
+                            font-size: 1rem;	
+                            font-family: 'NeueMontreal-italic', sans-serif;
+                            background-color: var(--wit);
+                            padding: 0.2rem;
+                        }
+                    }
+                }
+            }
+        }  
+    }
+    footer{
+        background-color: var(--roze);
+       
+        .container{
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 3.5rem;
+
+            .contact-info{
+                h2{
+                    font-family: 'NeueMontreal-bold', sans-serif;
+                    margin-bottom: 1.25rem;
+                }
+                p{
+                    max-width: 520px;
+                    font-size: 1.125rem;
+                    line-height: 1.55rem;
+                    margin-bottom: 2.5rem;
+                }
+
+                a{
+                    max-width: 200px;
+                    text-decoration: none;
+                    color: var(--black);
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                }
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+               
+                input, textarea{
+                    font-family: 'NeueMontreal-regular', sans-serif;
+                    padding: 0.5rem;
+                    border: 1px solid var(--black);
+                    font-size: 1rem;
+                    color: var(--black);
+                    resize: none;
+                    width: 300px;
+                    max-width: 300px;
+                }
+                button{
+                    font-family: 'NeueMontreal-regular', sans-serif;
+                    max-width: 110px;
+                    padding: 0.5rem 1rem;
+                    background-color: #C0FDA8;
+                    color: var(--black);
+                    border: 1px solid var(--black);
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: #97ec75;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante achtergrond */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+
+    .popup-content {
+        background-color: white;
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: popup-slide-in 0.4s ease-out;
+
+        h2 {
+            font-family: 'NeueMontreal-bold', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color:var(--black);
+        }
+         button {
+            padding: 0.5rem 1rem;
+            background-color: #C0FDA8;
+            color: var(--black);
+            border: 1px solid var(--black);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #97ec75;
+            }
+        }
+    }
+}
+
+.popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+    
+.eureka-page{
+    background-color: var(--roze);
+}
+.fossil-finders-page, .storymakers-page, .eureka-page, .tdp-page{
+    main{
+        .banner{
+            padding: calc(80px + 3rem) 2rem;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+              .container{
+                max-width: 914px;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                text-align: left;
+                img{
+                    margin-bottom: 1rem;
+                }
+
+                .text-stuff{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    .info{
+                        h2{
+                            font-family: 'NeueMontreal-bold', sans-serif;
+                            margin-bottom: 1rem;
+                        }
+                        p{
+                            margin-bottom: 1rem;
+                        }
+                    }
+                    .details{
+                        p{
+                            line-height: 1.125rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+              }
+        }
+        .project-info{
+            background-color: var(--wit);
+            .container{
+                padding: 5rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items:flex-start;
+                flex-wrap: wrap;
+
+
+                .text-box{
+                    max-width: 520px;
+                    text-align: left;
+
+                    h2{
+                        font-family: 'NeueMontreal-bold', sans-serif;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    h3{
+                        font-family: 'NeueMontreal-italic', sans-serif;
+                        font-size: 1.2rem;
+                        margin-bottom: 0.7rem;
+                    }
+
+                    p{
+                        font-size: 1.125rem;
+                        line-height: 1.55rem;
+                    
+                    }
+
+                    a{
+                        
+                        font-family: 'NeueMontreal-bold', sans-serif;
+                        font-size: 1.3rem;
+                        text-decoration: none;
+                        color: var(--black);
+
+                        span{
+                            text-decoration: underline;
+                        }
+                        
+                    }
+
+                    .pre-alinea{
+                        margin-bottom: 1.125rem;
+                    }
+                }
+                .img-box{
+                    img{
+                        margin-bottom: 0.2rem;
+                    }
+                    h3{
+                        font-family: 'NeueMontreal-italic', sans-serif;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .eerste-ideeen{
+            .container{
+                padding: 3rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                row-gap: 3.5rem;
+
+                h2{
+                    font-family: 'NeueMontreal-bold', sans-serif;
+                    margin-bottom: 1.5rem;
+                }
+                img {
+                    max-width: 20%;
+                    height: auto;
+                    flex-grow: 1; 
+                }
+            }
+        }  
+        .voorbeelden{
+            background-color: var(--roze);
+            .container{
+                padding : 5rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                row-gap: 3.5rem;
+            }
+        } 
+    }
+}
+.storymakers-page{
+    main{
+        .banner{
+            height: auto;
+            flex-wrap: wrap;
+            .container{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                
+            }
+         
+        }
+        .voorbeelden{
+            background-color: var(--roze);
+            .container{
+                row-gap: 1rem;
+                align-items: center;
+                justify-content: center;
+
+                h2{
+                    text-align: center;
+                    font-family: 'NeueMontreal-bold', sans-serif;
+                    margin-bottom: 1rem;
+                }
+                img{
+                    margin-bottom: 3rem;
+                }
+
+                .posterreeks, .folder{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    row-gap: 1rem;
+
+                  
+                }
+            }
+        }
+        .project-info{
+            .container{
+                row-gap: 2rem;
+                
+            }
+        } 
+    }
+}
+
+.tdp-page{
+    main{
+    .project-info{
+        .container{ 
+        row-gap: 3.5rem;
+        }
+    }
+}
+}
+
+
+
+@keyframes popup-slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    .storymakers-page{
+        main{
+            .voorbeelden{
+                .container{
+                    align-items: center;
+    
+                    h2{
+                        text-align: center;
+                        font-family: 'NeueMontreal-bold', sans-serif;
+                        margin-bottom: 1rem;
+                    }
+                    img{
+                        margin-bottom: 1.5rem;
+                    }
+    
+                    .posterreeks, .folder{
+                    justify-content: center;
+                    gap: 1rem;
+                    row-gap: 1rem; 
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media (max-width: 1125px){
+    html{
+        main{
+            .over-mij{
+                .container{
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .project-info{
+                .container{
+            
+
+                    row-gap: 3.5rem;
+                
+
+            }
+        }
+        }
+    }
+    
+}
+
+@media(max-width: 1000px) {
+   html{ 
+        main{
+            .banner{
+                .container{
+                    flex-direction: column; 
+                    align-items: center; 
+                    text-align: center;
+                    
+                    justify-content: flex-start;
+
+                    .text-box{
+                        margin: 3rem 0;
+                    }
+
+                    img{
+                        max-width: 100%; 
+                        height: auto; 
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    html{
+        main{
+            .mijn-werk{
+                .grid-werk {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+    .storymakers-page{
+        main{
+            .banner{
+                .container{
+                    flex-wrap: wrap;
+                    
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+
+    html{
+        main{
+            .favoriete-programmas{
+                .container{
+                    
+                    img{  
+                        max-width: 100px; 
+                        height: auto; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+
+    html{ 
+        .eureka-page{
+            .eerste-ideeen{
+                .container{
+                    img {
+                        max-width: 43%;
+                        height: auto;
+                        flex-grow: 1; 
+                    }
+                }
+            }
+        }
+
+        header{
+            padding: 0 2rem;
+    
+            h2{
+                font-size: 1.6rem;
+            }
+        }
+        main{
+            .banner{
+                .container{
+                 
+                    .text-box{
+                        
+                        p{
+                            font-size: 1.125rem;
+                            line-height: 1.5rem;
+                        }
+                        h2{
+                            font-size: 2.5rem; 
+                        }
+                    }
+
+                    img{
+                        max-width: 100%; 
+                        height: auto; 
+                    }
+                }
+            }
+            .favoriete-programmas{
+                h2{
+                    font-size: 1.5rem; 
+                }
+                .container{
+                    img{  
+                        max-width: 70px; 
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    html{
+       
+        main{
+           .mijn-werk{
+                .grid-werk {
+                     .nhm, .eureka, .storymakers, .tdp{
+                   
+                
+                        .shadow{
+                            h2{
+                                left: 20px;
+                                font-size: 1.5rem;
+                            }
+    
+                            .tags{
+                                left: 20px;
+                                h4{
+                                    font-size: 0.9rem;	
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+           }
+        }
+    }
+    
+
+@media (max-width: 480px) {
+    html{
+        header{
+            padding: 0 1rem;
+    
+            h2{
+                font-size: 1.4rem;
+            }
+        }
+        main{
+            .favoriete-programmas{
+                .container{
+                    display: grid; 
+                    grid-template-columns: repeat(3, 1fr); 
+                    gap: 1rem; 
+                    justify-items: center; 
+                    
+                }
+            }
+               
+        }
+    }
+    
+}
+
