@@ -497,6 +497,16 @@ html{
         } 
     }
 }
+.fossil-finders-page{
+    main{
+        .project-info{
+            .container{
+                row-gap: 2rem;
+                
+            }
+        } 
+    }
+}
 .storymakers-page{
     main{
         .banner{
